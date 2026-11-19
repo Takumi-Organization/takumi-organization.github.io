@@ -1,13 +1,13 @@
 {
- "generated": "2026-11-19T18:03:06.649Z",
+ "generated": "2026-11-19T18:28:54.334Z",
  "org": "Takumi-Organization",
  "incluyePrivados": true,
  "totals": {
-  "repos": 48,
-  "publicos": 0,
-  "privados": 48,
-  "commits": 181,
-  "bytes": 7430810,
+  "repos": 49,
+  "publicos": 5,
+  "privados": 44,
+  "commits": 188,
+  "bytes": 7485944,
   "lenguajes": 16
  },
  "areas": [
@@ -40,6 +40,11 @@
    "id": "canal",
    "titulo": "Canal y formación",
    "descripcion": "Código de los vídeos y cursos de Low Noise."
+  },
+  {
+   "id": "plataforma",
+   "titulo": "Organización y web",
+   "descripcion": "Presencia pública y automatización de la organización."
   }
  ],
  "languages": [
@@ -69,11 +74,11 @@
   },
   {
    "name": "JavaScript",
-   "bytes": 275189
+   "bytes": 306614
   },
   {
    "name": "HTML",
-   "bytes": 262512
+   "bytes": 273809
   },
   {
    "name": "GDScript",
@@ -81,7 +86,7 @@
   },
   {
    "name": "CSS",
-   "bytes": 201129
+   "bytes": 213541
   },
   {
    "name": "Shell",
@@ -109,6 +114,76 @@
   }
  ],
  "repos": [
+  {
+   "name": "webTUI",
+   "descripcion": "Navegador de terminal con render a celdas para TUI-OS.",
+   "area": "tui",
+   "stack": "Rust, Ratatui, Firefox",
+   "visibilidad": "publico",
+   "language": "Rust",
+   "commits": 2,
+   "size_kb": 0,
+   "pushed": "2026-11-19T18:28:29Z",
+   "created": "2026-11-19T17:45:44Z",
+   "stars": 0,
+   "url": "https://github.com/Takumi-Organization/webTUI"
+  },
+  {
+   "name": "editTUI",
+   "descripcion": "Editor de texto de terminal para TUI-OS.",
+   "area": "tui",
+   "stack": "Rust, Ratatui",
+   "visibilidad": "publico",
+   "language": "Rust",
+   "commits": 3,
+   "size_kb": 0,
+   "pushed": "2026-11-19T18:25:29Z",
+   "created": "2026-11-19T17:43:25Z",
+   "stars": 0,
+   "url": "https://github.com/Takumi-Organization/editTUI"
+  },
+  {
+   "name": "dockTUI",
+   "descripcion": "Sustituto de Docker Desktop en terminal: contenedores, imágenes, volúmenes, redes y Compose.",
+   "area": "tui",
+   "stack": "Rust, Ratatui",
+   "visibilidad": "publico",
+   "language": "Rust",
+   "commits": 1,
+   "size_kb": 0,
+   "pushed": "2026-11-19T18:24:11Z",
+   "created": "2026-11-19T17:43:13Z",
+   "stars": 0,
+   "url": "https://github.com/Takumi-Organization/dockTUI"
+  },
+  {
+   "name": "ryoku-glass",
+   "descripcion": "Identidad visual Ryoku Glass: base opaca, cristal y acento saturado.",
+   "area": "ryoku",
+   "stack": "HTML, CSS",
+   "visibilidad": "publico",
+   "language": "HTML",
+   "commits": 3,
+   "size_kb": 0,
+   "pushed": "2026-11-19T18:19:52Z",
+   "created": "2026-11-19T17:45:05Z",
+   "stars": 0,
+   "url": "https://github.com/Takumi-Organization/ryoku-glass"
+  },
+  {
+   "name": "takumi-organization.github.io",
+   "descripcion": "Web oficial: objeto 3D deformable, ciudad de repositorios, datos de GitHub y laboratorio de IA.",
+   "area": "plataforma",
+   "stack": "Three.js, Vite, GitHub Actions",
+   "visibilidad": "publico",
+   "language": "JavaScript",
+   "commits": 2,
+   "size_kb": 0,
+   "pushed": "2026-11-19T18:16:32Z",
+   "created": "2026-11-19T18:11:50Z",
+   "stars": 0,
+   "url": "https://github.com/Takumi-Organization/takumi-organization.github.io"
+  },
   {
    "name": "Verificador_Datos",
    "descripcion": "Importado desde LowNoise647 (sin historial)",
@@ -530,20 +605,6 @@
    "url": null
   },
   {
-   "name": "webTUI",
-   "descripcion": "Navegador de terminal con render a celdas para TUI-OS.",
-   "area": "tui",
-   "stack": "Rust, Ratatui, Firefox",
-   "visibilidad": "privado",
-   "language": "Rust",
-   "commits": 1,
-   "size_kb": 0,
-   "pushed": "2026-11-19T17:45:49Z",
-   "created": "2026-11-19T17:45:44Z",
-   "stars": 0,
-   "url": null
-  },
-  {
    "name": "stockmind",
    "descripcion": "Aprendizaje automático y por refuerzo aplicado a bolsa.",
    "area": "ia",
@@ -582,20 +643,6 @@
    "size_kb": 0,
    "pushed": "2026-11-19T17:45:22Z",
    "created": "2026-11-19T17:45:16Z",
-   "stars": 0,
-   "url": null
-  },
-  {
-   "name": "ryoku-glass",
-   "descripcion": "Identidad visual Ryoku Glass: base opaca, cristal y acento saturado.",
-   "area": "ryoku",
-   "stack": "HTML, CSS",
-   "visibilidad": "privado",
-   "language": "HTML",
-   "commits": 1,
-   "size_kb": 0,
-   "pushed": "2026-11-19T17:45:11Z",
-   "created": "2026-11-19T17:45:05Z",
    "stars": 0,
    "url": null
   },
@@ -694,34 +741,6 @@
    "size_kb": 0,
    "pushed": "2026-11-19T17:43:49Z",
    "created": "2026-11-19T17:43:34Z",
-   "stars": 0,
-   "url": null
-  },
-  {
-   "name": "editTUI",
-   "descripcion": "Editor de texto de terminal para TUI-OS.",
-   "area": "tui",
-   "stack": "Rust, Ratatui",
-   "visibilidad": "privado",
-   "language": "Rust",
-   "commits": 1,
-   "size_kb": 0,
-   "pushed": "2026-11-19T17:43:30Z",
-   "created": "2026-11-19T17:43:25Z",
-   "stars": 0,
-   "url": null
-  },
-  {
-   "name": "dockTUI",
-   "descripcion": "Sustituto de Docker Desktop en terminal: contenedores, imágenes, volúmenes, redes y Compose.",
-   "area": "tui",
-   "stack": "Rust, Ratatui",
-   "visibilidad": "privado",
-   "language": "Rust",
-   "commits": 1,
-   "size_kb": 0,
-   "pushed": "2026-11-19T17:43:20Z",
-   "created": "2026-11-19T17:43:13Z",
    "stars": 0,
    "url": null
   },
