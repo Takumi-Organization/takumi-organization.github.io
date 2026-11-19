@@ -159,3 +159,5 @@ input[type="range"] { padding: 0; height: 22px; accent-color: #fff; background: 
   .reveal { opacity: 1; transform: none; transition: none; }
   .bars .fill { transition: none; }
 }
+
+.btn.wa { margin: 6px 0 26px; }

@@ -2,7 +2,7 @@ import "./styles.css";
 import { initBlob } from "./blob.js";
 import { loadData } from "./data.js";
 import { initLab } from "./lab.js";
-import { CONTACT_EMAIL, ORG_URL } from "./config.js";
+import { CONTACT_EMAIL, ORG_URL, WHATSAPP, WHATSAPP_TEXTO } from "./config.js";
 
 const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
 
@@ -25,6 +25,9 @@ secs.forEach((s) => spy.observe(s));
 // contacto: prepara un mailto, sin servidor
 document.getElementById("gh-link").href = ORG_URL;
 document.getElementById("mail-link").href = `mailto:${CONTACT_EMAIL}`;
+const wa = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(WHATSAPP_TEXTO)}`;
+document.getElementById("wa-link").href = wa;
+document.getElementById("wa-btn").href = wa;
 const form = document.getElementById("contact-form"), msg = document.getElementById("form-msg");
 form.addEventListener("submit", (e) => {
   e.preventDefault();
