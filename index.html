@@ -118,33 +118,25 @@
     <section class="block" id="ia">
       <div class="wrap">
         <p class="eyebrow reveal">05 — Zona de IA</p>
-        <h2 class="reveal">Aprender desde cero, a la vista.</h2>
-        <p class="sub reveal">No usamos cajas negras para entender el aprendizaje automático: construimos tensores, autograd y redes a mano (<code>rust-ai-core</code>). Esta red neuronal se entrena <em>ahora mismo en tu navegador</em>, sin servidor ni librerías de ML: propagación hacia atrás y optimizador Adam escritos en JavaScript.</p>
-        <div class="lab cut reveal"><div class="in">
-          <div class="lab-view">
-            <canvas id="lab-canvas" width="360" height="360" aria-label="Frontera de decisión de una red neuronal entrenándose" role="img"></canvas>
-            <canvas id="loss-canvas" width="360" height="90" aria-label="Curva de pérdida" role="img"></canvas>
+        <h2 class="reveal">Aprendizaje automático, desde cero.</h2>
+        <p class="sub reveal">La zona de IA reúne los proyectos de aprendizaje automático de la organización: tensores y autograd a mano (<code>rust-ai-core</code>), aprendizaje por refuerzo aplicado a bolsa (<code>stockmind</code>) y medición estadística de agentes (<code>skillproof</code>). El robot es solo la mascota: un modelo 3D procedural hecho con Three.js, sin ninguna IA dentro.</p>
+        <div class="robot cut reveal"><div class="in">
+          <div class="robot-stage">
+            <canvas id="robot-canvas" aria-label="Modelo 3D interactivo de un robot facetado de color plata y negro. Se gira arrastrando y sus ojos siguen al puntero." role="img"></canvas>
+            <div class="tip" id="robot-tip" hidden></div>
           </div>
-          <div class="lab-ctrl">
-            <label>Datos
-              <select id="lab-data"><option value="spiral">Espiral</option><option value="circles">Círculos</option><option value="moons">Lunas</option><option value="xor">XOR</option></select>
-            </label>
-            <label>Neuronas por capa oculta <output id="out-h">10</output>
-              <input id="lab-h" type="range" min="3" max="24" value="10">
-            </label>
-            <label>Tasa de aprendizaje <output id="out-lr">0.03</output>
-              <input id="lab-lr" type="range" min="0.005" max="0.1" step="0.005" value="0.03">
-            </label>
-            <div class="lab-btns">
-              <button class="btn" id="lab-run" type="button">Pausar</button>
-              <button class="btn ghost" id="lab-reset" type="button">Reiniciar</button>
+          <div class="robot-ctrl">
+            <h3>Takumi-bot</h3>
+            <p class="muted small">Arrastra para girarlo, mueve el cursor para que te mire, pasa el cursor por una parte para ver su nombre y pulsa sobre el robot para cambiar de pose.</p>
+            <div class="chips" id="robot-chips" role="group" aria-label="Poses del robot">
+              <button type="button" data-pose="saludo" aria-pressed="false">Saludo</button>
+              <button type="button" data-pose="guardia" aria-pressed="false">Guardia</button>
+              <button type="button" data-pose="escaneo" aria-pressed="false">Escaneo</button>
+              <button type="button" data-pose="reposo" aria-pressed="true">Reposo</button>
+              <button type="button" data-vista="1" class="aparte">Restablecer vista</button>
             </div>
-            <dl class="lab-metrics">
-              <div><dt>Época</dt><dd id="m-epoch">0</dd></div>
-              <div><dt>Pérdida</dt><dd id="m-loss">—</dd></div>
-              <div><dt>Precisión</dt><dd id="m-acc">—</dd></div>
-            </dl>
-            <p class="muted small">Red 2 → h → h → 2 con tanh y softmax. Los puntos claros y oscuros son las dos clases; el fondo es lo que la red cree.</p>
+            <p class="readout" id="robot-part">Pasa el cursor por una parte del robot.</p>
+            <p class="muted small">Construido con cajas, prismas y cilindros de Three.js: sin modelos ni texturas externos. Se anima solo cuando está a la vista.</p>
           </div>
         </div></div>
         <h3 class="subhead reveal">Proyectos de IA</h3>

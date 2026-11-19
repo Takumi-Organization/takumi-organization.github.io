@@ -1,13 +1,18 @@
 import "./styles.css";
 import { initBlob } from "./blob.js";
 import { loadData } from "./data.js";
-import { initLab } from "./lab.js";
+import { initRobot } from "./robot.js";
 import { CONTACT_EMAIL, ORG_URL, WHATSAPP, WHATSAPP_TEXTO } from "./config.js";
 
 const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 initBlob(document.getElementById("hero-canvas"), reduced);
-initLab();
+initRobot(document.getElementById("robot-canvas"), {
+  tipEl: document.getElementById("robot-tip"),
+  readoutEl: document.getElementById("robot-part"),
+  chipsEl: document.getElementById("robot-chips"),
+  reduced,
+});
 loadData();
 
 // revelado al hacer scroll

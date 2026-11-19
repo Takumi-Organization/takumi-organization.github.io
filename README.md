@@ -7,7 +7,7 @@ Identidad visual: papel negro, tinta clara, trazo afilado (ver el logo de la org
 - **Objeto 3D deformable** (hero): icosaedro cuyos vértices se desplazan con ruido simplex en el shader; reacciona al puntero, al clic, al arrastre y a la velocidad de scroll.
 - **Ciudad de repositorios** (3D): un bloque por proyecto, altura = commits; se gira arrastrando y muestra datos al pasar el cursor.
 - **Datos de GitHub**: `scripts/fetch-stats.mjs` genera `public/data/stats.json` (repos, commits, lenguajes, actividad).
-- **Laboratorio de IA**: red neuronal 2→h→h→2 con retropropagación y Adam escritos a mano, entrenándose en el navegador (`src/lab.js`).
+- **Robot 3D interactivo** (zona de IA): modelo procedural facetado (cajas, prismas y cilindros de Three.js, sin modelos externos) con brazos articulados; se orbita arrastrando con inercia, el ojo y la cabeza siguen al puntero, resalta cada parte al pasar el cursor y cambia de pose al pulsarlo (`src/robot.js`). Es solo la mascota de la sección: no incorpora ninguna IA.
 - **Contacto** sin servidor: prepara un `mailto:` (el correo se cambia en `src/config.js`).
 
 ## Desarrollo
