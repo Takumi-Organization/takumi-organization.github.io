@@ -119,24 +119,50 @@
       <div class="wrap">
         <p class="eyebrow reveal">05 — Zona de IA</p>
         <h2 class="reveal">Aprendizaje automático, desde cero.</h2>
-        <p class="sub reveal">La zona de IA reúne los proyectos de aprendizaje automático de la organización: tensores y autograd a mano (<code>rust-ai-core</code>), aprendizaje por refuerzo aplicado a bolsa (<code>stockmind</code>) y medición estadística de agentes (<code>skillproof</code>). El robot es solo la mascota: un modelo 3D procedural hecho con Three.js, sin ninguna IA dentro.</p>
+        <p class="sub reveal">La zona de IA reúne los proyectos de aprendizaje automático de la organización: tensores y autograd a mano (<code>rust-ai-core</code>), aprendizaje por refuerzo aplicado a bolsa (<code>stockmind</code>) y medición estadística de agentes (<code>skillproof</code>). El robot es solo la mascota de la sección y no lleva ninguna IA dentro: un modelo 3D profesional de Sketchfab (CC BY 4.0) y un Takumi-bot propio hecho con Three.js.</p>
         <div class="robot cut reveal"><div class="in">
           <div class="robot-stage">
-            <canvas id="robot-canvas" aria-label="Modelo 3D interactivo de un robot facetado de color plata y negro. Se gira arrastrando y sus ojos siguen al puntero." role="img"></canvas>
-            <div class="tip" id="robot-tip" hidden></div>
+            <div class="pane" id="pane-pro">
+              <div id="pro-host"></div>
+              <button type="button" class="facade" id="pro-load" aria-label="Cargar el modelo 3D interactivo del robot desde Sketchfab">
+                <img src="./robot-pro.webp" alt="Robot humanoide de ciencia ficción, con placas, cableado e hidráulica, en escala de grises" width="705" height="680" decoding="async">
+                <span class="btn cta">Cargar modelo 3D interactivo</span>
+                <small class="aviso">Se carga desde Sketchfab (servicio externo). Pesa varios MB.</small>
+              </button>
+            </div>
+            <div class="pane" id="pane-own" hidden>
+              <canvas id="robot-canvas" aria-label="Modelo 3D interactivo de Takumi-bot, un robot de armadura en negro y plata. Se gira arrastrando y su visor sigue al puntero." role="img"></canvas>
+              <div class="tip" id="robot-tip" hidden></div>
+            </div>
           </div>
           <div class="robot-ctrl">
-            <h3>Takumi-bot</h3>
-            <p class="muted small">Arrastra para girarlo, mueve el cursor para que te mire, pasa el cursor por una parte para ver su nombre y pulsa sobre el robot para cambiar de pose.</p>
-            <div class="chips" id="robot-chips" role="group" aria-label="Poses del robot">
-              <button type="button" data-pose="saludo" aria-pressed="false">Saludo</button>
-              <button type="button" data-pose="guardia" aria-pressed="false">Guardia</button>
-              <button type="button" data-pose="escaneo" aria-pressed="false">Escaneo</button>
-              <button type="button" data-pose="reposo" aria-pressed="true">Reposo</button>
-              <button type="button" data-vista="1" class="aparte">Restablecer vista</button>
+            <h3>Robot 3D</h3>
+            <div class="chips" id="modo-chips" role="group" aria-label="Modelo a mostrar">
+              <button type="button" data-modo="pro" aria-pressed="true">Modelo profesional</button>
+              <button type="button" data-modo="propio" aria-pressed="false">Takumi-bot (propio)</button>
             </div>
-            <p class="readout" id="robot-part">Pasa el cursor por una parte del robot.</p>
-            <p class="muted small">Geometría 100 % procedural de Three.js (superficies de revolución, láminas curvas, cables): sin modelos ni texturas externos. Se anima solo cuando está a la vista.</p>
+            <div class="modo" id="ctrl-pro">
+              <p class="muted small">Modelo de hard-surface con placas, cableado e hidráulica, mostrado en escala de grises. Arrastra para orbitar y acerca con la rueda o con dos dedos.</p>
+              <div class="chips" id="cam-chips" role="group" aria-label="Planos de cámara">
+                <button type="button" data-plano="cuerpo" aria-pressed="true">Cuerpo entero</button>
+                <button type="button" data-plano="cabeza" aria-pressed="false">Cabeza</button>
+                <button type="button" data-plano="pecho" aria-pressed="false">Pecho</button>
+                <button type="button" data-plano="perfil" aria-pressed="false">Perfil</button>
+              </div>
+              <p class="readout" id="pro-estado" role="status">Pulsa el modelo para cargarlo.</p>
+              <p class="muted small credito">«<a href="https://sketchfab.com/3d-models/sci-fi-humanoid-robot-12ad786ecde246e5854a61fd4f67ed49" rel="noopener">Sci-Fi Humanoid Robot</a>» de <a href="https://sketchfab.com/yur1_val" rel="noopener">yur1_val</a>, publicado en <a href="https://sketchfab.com" rel="noopener">Sketchfab</a> bajo licencia <a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener">CC BY 4.0</a>. Modificación: se muestra en escala de grises.</p>
+            </div>
+            <div class="modo" id="ctrl-propio" hidden>
+              <p class="muted small">Takumi-bot es una mascota propia hecha con geometría procedural de Three.js, sin modelos externos. Arrastra para girarlo, mueve el cursor para que te mire y pulsa sobre el robot para cambiar de pose.</p>
+              <div class="chips" id="robot-chips" role="group" aria-label="Poses del robot">
+                <button type="button" data-pose="saludo" aria-pressed="false">Saludo</button>
+                <button type="button" data-pose="guardia" aria-pressed="false">Guardia</button>
+                <button type="button" data-pose="escaneo" aria-pressed="false">Escaneo</button>
+                <button type="button" data-pose="reposo" aria-pressed="true">Reposo</button>
+                <button type="button" data-vista="1" class="aparte">Restablecer vista</button>
+              </div>
+              <p class="readout" id="robot-part">Pasa el cursor por una parte del robot.</p>
+            </div>
           </div>
         </div></div>
         <h3 class="subhead reveal">Proyectos de IA</h3>

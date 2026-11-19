@@ -168,3 +168,18 @@ input[type="range"] { padding: 0; height: 22px; accent-color: #fff; background: 
 }
 
 .btn.wa { margin: 6px 0 26px; }
+
+/* modelo profesional (Sketchfab) */
+.pane { position: absolute; inset: 0; }
+.pane[hidden], .modo[hidden] { display: none; }
+#pro-host { position: absolute; inset: 0; }
+#pro-host iframe { width: 100%; height: 100%; border: 0; display: block; filter: grayscale(1) contrast(1.08); }
+.facade { position: absolute; inset: 0; width: 100%; height: 100%; padding: 0; border: 0; background: #030303; cursor: pointer; display: block; transition: opacity .5s; z-index: 2; }
+.facade img { width: 100%; height: 100%; object-fit: contain; display: block; }
+.facade .cta { position: absolute; left: 50%; bottom: 11%; transform: translateX(-50%); white-space: nowrap; }
+.facade:hover .cta { background: #fff; }
+.facade .aviso { position: absolute; left: 0; right: 0; bottom: 5%; text-align: center; font: 400 11px var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--mut); }
+.facade.cargando { cursor: progress; } .facade.cargando .cta { opacity: .5; }
+.facade.listo { opacity: 0; pointer-events: none; }
+.credito a { color: var(--fg); }
+.modo { display: flex; flex-direction: column; gap: 18px; }
