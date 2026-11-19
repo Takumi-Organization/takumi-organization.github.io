@@ -1,0 +1,21 @@
+{
+  "name": "takumi-web",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Web oficial de Takumi Organization",
+  "scripts": {
+    "dev": "vite",
+    "stats": "node scripts/fetch-stats.mjs",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@fontsource/jetbrains-mono": "5.3.0",
+    "@fontsource/outfit": "5.3.0",
+    "three": "0.187.0"
+  },
+  "devDependencies": {
+    "vite": "8.3.8"
+  }
+}

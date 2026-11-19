@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Takumi Organization</title>
+  <meta name="description" content="Takumi Organization: software propio construido con oficio. Aplicaciones móviles, herramientas de terminal, escritorio y aprendizaje automático.">
+  <meta name="theme-color" content="#000000">
+  <meta property="og:title" content="Takumi Organization">
+  <meta property="og:description" content="Software propio, construido con oficio.">
+  <meta property="og:image" content="./og.png">
+  <link rel="icon" type="image/png" href="./favicon.png">
+  <script type="module" src="/src/main.js"></script>
+</head>
+<body>
+  <canvas id="hero-canvas" aria-hidden="true"></canvas>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="nav" id="nav">
+    <a href="#inicio" class="brand" aria-label="Takumi Organization, inicio"><span class="mark" aria-hidden="true"></span>TAKUMI</a>
+    <nav aria-label="Principal">
+      <a href="#somos">Quiénes somos</a>
+      <a href="#metodo">Método</a>
+      <a href="#datos">Datos</a>
+      <a href="#proyectos">Proyectos</a>
+      <a href="#ia">IA</a>
+      <a href="#contacto" class="cta">Contacto</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <p class="eyebrow reveal">匠 · Oficio y precisión</p>
+      <h1 class="reveal"><span>TAKUMI</span><small>Organization</small></h1>
+      <p class="lead reveal">Software propio, construido con oficio. Aplicaciones móviles, herramientas de terminal, escritorio y aprendizaje automático, verificados antes de darse por terminados.</p>
+      <div class="hero-actions reveal">
+        <a class="btn" href="#proyectos">Ver proyectos</a>
+        <a class="btn ghost" href="#datos">Datos en vivo</a>
+      </div>
+      <dl class="hero-stats reveal" id="hero-stats" aria-live="polite">
+        <div><dt>Repositorios</dt><dd data-stat="repos">—</dd></div>
+        <div><dt>Commits</dt><dd data-stat="commits">—</dd></div>
+        <div><dt>Lenguajes</dt><dd data-stat="lenguajes">—</dd></div>
+        <div><dt>Líneas aprox.</dt><dd data-stat="lineas">—</dd></div>
+      </dl>
+      <p class="hint" aria-hidden="true">Arrastra o pulsa el objeto · desplázate</p>
+    </section>
+
+    <section class="block" id="somos">
+      <div class="wrap two">
+        <div>
+          <p class="eyebrow reveal">01 — Quiénes somos</p>
+          <h2 class="reveal">Un taller, no una fábrica.</h2>
+        </div>
+        <div class="prose reveal">
+          <p>Takumi (匠) es la palabra japonesa para el artesano que domina su oficio. Así entendemos el software: pocas piezas, bien hechas, comprobadas y mantenibles.</p>
+          <p>Trabajamos en cuatro frentes: <strong>aplicaciones Android</strong> nativas, <strong>herramientas de terminal</strong> en Rust, el <strong>escritorio Ryoku</strong> y <strong>aprendizaje automático</strong> construido desde cero para entenderlo de verdad.</p>
+          <p>Todo lo que aparece en esta página se alimenta de nuestros repositorios de GitHub, sin cifras inventadas.</p>
+        </div>
+      </div>
+      <div class="wrap pillars">
+        <article class="cut reveal"><div class="in"><h3>Nativo</h3><p>Kotlin y Compose en Android, Rust en terminal, C++ y Qt en escritorio. La herramienta adecuada, sin modas.</p></div></article>
+        <article class="cut reveal"><div class="in"><h3>Verificado</h3><p>Pruebas, compilación y ejecución real antes de decir «hecho». Lo que no se probó, se dice.</p></div></article>
+        <article class="cut reveal"><div class="in"><h3>Propio</h3><p>Sin dependencias gratuitas: preferimos entender el núcleo. Un framework de ML, un editor, un navegador de terminal.</p></div></article>
+        <article class="cut reveal"><div class="in"><h3>Abierto al detalle</h3><p>Diseño con identidad: papel negro, tinta clara, trazo afilado. Cada pantalla se mira de cerca.</p></div></article>
+      </div>
+    </section>
+
+    <section class="block" id="metodo">
+      <div class="wrap">
+        <p class="eyebrow reveal">02 — Cómo trabajamos</p>
+        <h2 class="reveal">Cinco pasos, siempre en este orden.</h2>
+        <ol class="steps">
+          <li class="reveal"><span class="n">01</span><div><h3>Inspeccionar</h3><p>Antes de tocar nada: estado del repositorio, documentación, pruebas y convenciones que ya existen. Nunca imponemos arquitectura.</p></div></li>
+          <li class="reveal"><span class="n">02</span><div><h3>Decidir simple</h3><p>La opción más simple que resuelva el problema. Sin dependencias ni abstracciones sin una necesidad escrita.</p></div></li>
+          <li class="reveal"><span class="n">03</span><div><h3>Construir en pasos pequeños</h3><p>Cambios acotados, una cosa por commit. Las refactorizaciones no se mezclan con funcionalidades.</p></div></li>
+          <li class="reveal"><span class="n">04</span><div><h3>Verificar</h3><p>Compilar, probar y ejecutar de verdad, lo más barato primero. Se informa de lo verificado, lo supuesto y lo no probado.</p></div></li>
+          <li class="reveal"><span class="n">05</span><div><h3>Documentar y publicar</h3><p>Notas de decisión, README al día y publicación deliberada: los proyectos nacen privados y se abren cuando están listos.</p></div></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="block" id="datos">
+      <div class="wrap">
+        <p class="eyebrow reveal">03 — Datos</p>
+        <h2 class="reveal">La organización, medida.</h2>
+        <p class="sub reveal">Extraído de la API de GitHub y actualizado cada día por un workflow. <span id="data-updated">Cargando…</span></p>
+        <div class="data-grid">
+          <div class="panel cut reveal"><div class="in">
+            <h3>Ciudad de repositorios</h3>
+            <p class="muted small">Cada bloque es un proyecto: la altura es el número de commits. Arrastra para girar, pasa el cursor para leer.</p>
+            <div class="city-wrap"><canvas id="city-canvas" aria-label="Visualización 3D de repositorios por número de commits" role="img"></canvas><div class="tip" id="city-tip" hidden></div></div>
+          </div></div>
+          <div class="panel cut reveal"><div class="in">
+            <h3>Lenguajes</h3>
+            <p class="muted small">Bytes de código por lenguaje en todos los repositorios.</p>
+            <ul class="bars" id="lang-bars"></ul>
+          </div></div>
+          <div class="panel cut reveal"><div class="in">
+            <h3>Actividad reciente</h3>
+            <p class="muted small">Últimos repositorios con cambios.</p>
+            <ul class="recent" id="recent"></ul>
+          </div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="proyectos">
+      <div class="wrap">
+        <p class="eyebrow reveal">04 — Proyectos</p>
+        <h2 class="reveal">Lo que construimos.</h2>
+        <div class="filters reveal" id="filters" role="tablist" aria-label="Filtrar por área"></div>
+        <div class="cards" id="cards"></div>
+        <p class="muted small archive" id="archive-note"></p>
+      </div>
+    </section>
+
+    <section class="block" id="ia">
+      <div class="wrap">
+        <p class="eyebrow reveal">05 — Zona de IA</p>
+        <h2 class="reveal">Aprender desde cero, a la vista.</h2>
+        <p class="sub reveal">No usamos cajas negras para entender el aprendizaje automático: construimos tensores, autograd y redes a mano (<code>rust-ai-core</code>). Esta red neuronal se entrena <em>ahora mismo en tu navegador</em>, sin servidor ni librerías de ML: propagación hacia atrás y optimizador Adam escritos en JavaScript.</p>
+        <div class="lab cut reveal"><div class="in">
+          <div class="lab-view">
+            <canvas id="lab-canvas" width="360" height="360" aria-label="Frontera de decisión de una red neuronal entrenándose" role="img"></canvas>
+            <canvas id="loss-canvas" width="360" height="90" aria-label="Curva de pérdida" role="img"></canvas>
+          </div>
+          <div class="lab-ctrl">
+            <label>Datos
+              <select id="lab-data"><option value="spiral">Espiral</option><option value="circles">Círculos</option><option value="moons">Lunas</option><option value="xor">XOR</option></select>
+            </label>
+            <label>Neuronas por capa oculta <output id="out-h">10</output>
+              <input id="lab-h" type="range" min="3" max="24" value="10">
+            </label>
+            <label>Tasa de aprendizaje <output id="out-lr">0.03</output>
+              <input id="lab-lr" type="range" min="0.005" max="0.1" step="0.005" value="0.03">
+            </label>
+            <div class="lab-btns">
+              <button class="btn" id="lab-run" type="button">Pausar</button>
+              <button class="btn ghost" id="lab-reset" type="button">Reiniciar</button>
+            </div>
+            <dl class="lab-metrics">
+              <div><dt>Época</dt><dd id="m-epoch">0</dd></div>
+              <div><dt>Pérdida</dt><dd id="m-loss">—</dd></div>
+              <div><dt>Precisión</dt><dd id="m-acc">—</dd></div>
+            </dl>
+            <p class="muted small">Red 2 → h → h → 2 con tanh y softmax. Los puntos claros y oscuros son las dos clases; el fondo es lo que la red cree.</p>
+          </div>
+        </div></div>
+        <h3 class="subhead reveal">Proyectos de IA</h3>
+        <div class="cards" id="ai-cards"></div>
+      </div>
+    </section>
+
+    <section class="block" id="contacto">
+      <div class="wrap two">
+        <div>
+          <p class="eyebrow reveal">06 — Contacto</p>
+          <h2 class="reveal">Hablemos.</h2>
+          <p class="sub reveal">Colaboraciones, preguntas sobre un proyecto o encargos. Responde una persona.</p>
+          <ul class="links reveal">
+            <li><a id="gh-link" href="https://github.com/Takumi-Organization" rel="noopener">github.com/Takumi-Organization</a></li>
+            <li><a id="mail-link" href="#contacto">Escribir un correo</a></li>
+          </ul>
+        </div>
+        <form class="form cut reveal" id="contact-form" novalidate><div class="in">
+          <label>Nombre<input name="nombre" required autocomplete="name"></label>
+          <label>Tu correo<input name="email" type="email" required autocomplete="email"></label>
+          <label>Asunto
+            <select name="asunto"><option>Colaboración</option><option>Pregunta sobre un proyecto</option><option>Encargo</option><option>Otro</option></select>
+          </label>
+          <label>Mensaje<textarea name="mensaje" rows="5" required></textarea></label>
+          <button class="btn" type="submit">Preparar correo</button>
+          <p class="muted small" id="form-msg" role="status">Se abrirá tu cliente de correo con el mensaje listo. No guardamos nada en ningún servidor.</p>
+        </div></form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap">
+      <span class="brand"><span class="mark" aria-hidden="true"></span>TAKUMI ORGANIZATION</span>
+      <span class="muted small">Web generada con datos de GitHub · <a href="https://github.com/Takumi-Organization/takumi-organization.github.io" rel="noopener">código fuente</a></span>
+    </div>
+  </footer>
+</body>
+</html>
