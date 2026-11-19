@@ -115,7 +115,8 @@ h3 { font-weight: 500; font-size: 14px; letter-spacing: .22em; text-transform: u
 
 /* robot 3D */
 .robot > .in { display: grid; grid-template-columns: 1.5fr 1fr; gap: 0; padding: 0; align-items: stretch; }
-.robot-stage { position: relative; min-height: 620px; border-right: 1px solid var(--line); background: #030303; }
+.robot-stage { position: relative; min-height: 680px; border-right: 1px solid var(--line); background: #030303; }
+.robot-stage::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: radial-gradient(ellipse at 50% 46%, transparent 52%, rgba(0,0,0,.72) 100%); }
 #robot-canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; cursor: grab; touch-action: pan-y; }
 #robot-canvas:active { cursor: grabbing; }
 .robot-ctrl { padding: 34px; display: flex; flex-direction: column; gap: 18px; justify-content: center; }
@@ -157,7 +158,7 @@ input[type="range"] { padding: 0; height: 22px; accent-color: #fff; background: 
   .hero-stats { grid-template-columns: repeat(2, auto); }
   .steps li { grid-template-columns: 56px 1fr; } .steps .n { font-size: 30px; }
   .city-wrap { height: 340px; }
-  .robot-stage { min-height: 500px; }
+  .robot-stage { min-height: 540px; }
   .robot-ctrl { padding: 24px; }
 }
 @media (prefers-reduced-motion: reduce) {
