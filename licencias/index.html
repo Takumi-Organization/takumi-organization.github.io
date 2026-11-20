@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Licencias y créditos · Takumi Organization</title>
+  <meta name="description" content="Licencia MIT del código de Takumi-Organization y créditos de componentes de terceros.">
+  <meta name="theme-color" content="#000000">
+  <link rel="canonical" href="https://takumi-organization.github.io/licencias/">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <script type="module" src="/src/legal.js"></script>
+</head>
+<body class="legal-page">
+  <header class="nav solid" id="nav">
+    <a href="../" class="brand" aria-label="Takumi Organization, inicio"><span class="mark" aria-hidden="true"></span>TAKUMI</a>
+    <nav aria-label="Principal">
+      <a href="../#proyectos">Proyectos</a>
+      <a href="../#contacto" class="cta">Contacto</a>
+    </nav>
+  </header>
+
+  <main class="legal">
+    <div class="wrap legal-wrap">
+      <p class="eyebrow">Takumi-Organization · Documentos</p>
+      <h1>Licencias y créditos</h1>
+      <p class="actualizado">Última actualización: <time datetime="2026-11-20">20 de noviembre de 2026</time></p>
+
+      <p class="lead-legal">Licencia del código de Takumi-Organization y créditos de los componentes de terceros que usa esta web.</p>
+
+      <h2>1. Licencia de Takumi-Organization (MIT)</h2>
+      <p>El código fuente de esta web, y el de los proyectos de Takumi-Organization que indiquen esta licencia, se distribuye bajo la licencia MIT. Titular: «Takumi-Organization», año 2026. Cada proyecto puede indicar su propia licencia en su repositorio; si un repositorio no incluye un archivo de licencia, no se concede ningún derecho de uso por defecto.</p>
+      <pre class="texto-licencia">MIT License
+
+Copyright (c) 2026 Takumi-Organization
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the &quot;Software&quot;), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.</pre>
+
+      <h2>2. Componentes de terceros</h2>
+      <p>Versiones tomadas de <code>package.json</code> y <code>package-lock.json</code> del proyecto; licencias comprobadas en el campo <code>license</code> de cada paquete y en sus archivos de licencia.</p>
+      <table class="tabla">
+        <thead><tr><th>Componente</th><th>Versión</th><th>Licencia</th><th>Uso</th></tr></thead>
+        <tbody>
+          <tr><td><a href="https://threejs.org" rel="noopener">three</a> (© three.js authors)</td><td>0.187.0</td><td>MIT</td><td>Objeto 3D del hero y ciudad de repositorios.</td></tr>
+          <tr><td><a href="https://github.com/splinetool/runtime" rel="noopener">@splinetool/runtime</a> (© Spline, Inc.)</td><td>2.0.203</td><td><strong>No declarada</strong> en el paquete (sin campo de licencia ni archivo de licencia)</td><td>Reproduce la escena 3D del robot. Se debe confirmar su licencia o condiciones de uso con Spline.</td></tr>
+          <tr><td><a href="https://github.com/sindresorhus/on-change" rel="noopener">on-change</a></td><td>4.0.0</td><td>MIT</td><td>Dependencia de @splinetool/runtime.</td></tr>
+          <tr><td>semver-compare</td><td>1.0.0</td><td>MIT</td><td>Dependencia de @splinetool/runtime.</td></tr>
+          <tr><td><a href="https://fontsource.org/fonts/outfit" rel="noopener">@fontsource/outfit</a> (fuente Outfit, © 2021 The Outfit Project Authors)</td><td>5.3.0</td><td>SIL OFL 1.1</td><td>Tipografía de la web, servida desde la propia web.</td></tr>
+          <tr><td><a href="https://fontsource.org/fonts/jetbrains-mono" rel="noopener">@fontsource/jetbrains-mono</a> (fuente JetBrains Mono, © 2020 The JetBrains Mono Project Authors)</td><td>5.3.0</td><td>SIL OFL 1.1</td><td>Tipografía monoespaciada de la web, servida desde la propia web.</td></tr>
+          <tr><td><a href="https://vite.dev" rel="noopener">Vite</a></td><td>8.3.8</td><td>MIT</td><td>Herramienta de compilación (no se distribuye como componente de la web; puede incorporar pequeños fragmentos de su código al empaquetar).</td></tr>
+        </tbody>
+      </table>
+      <p>Otras dependencias de compilación (rolldown, lightningcss, postcss y similares) se usan solo para construir la web y no forman parte de lo que descarga el visitante; sus licencias constan en <code>package-lock.json</code> (MIT, ISC, BSD-3-Clause, Apache-2.0, MPL-2.0 y 0BSD).</p>
+
+      <h2>3. Escena 3D del robot</h2>
+      <p>La escena del robot humanoide se publicó en la comunidad de <a href="https://spline.design" rel="noopener">Spline</a> y se muestra con su runtime oficial; la imagen de previsualización (<code>robot-spline.webp</code>) procede de esa escena. <strong>La licencia o condiciones de reutilización de esta escena no están confirmadas</strong>: no se concede ningún derecho sobre ella más allá de los que su autor y Spline hayan otorgado, y no está cubierta por la licencia MIT de la sección 1.</p>
+
+      <h2>4. Licencia de las tipografías (SIL Open Font License 1.1)</h2>
+      <p>Outfit: Copyright 2021 The Outfit Project Authors (<a href="https://github.com/Outfitio/Outfit-Fonts" rel="noopener">github.com/Outfitio/Outfit-Fonts</a>). JetBrains Mono: Copyright 2020 The JetBrains Mono Project Authors (<a href="https://github.com/JetBrains/JetBrainsMono" rel="noopener">github.com/JetBrains/JetBrainsMono</a>). Ambas se distribuyen con esta licencia:</p>
+      <details>
+        <summary>Ver el texto de la licencia OFL 1.1</summary>
+        <pre class="texto-licencia">-----------------------------------------------------------
+SIL OPEN FONT LICENSE Version 1.1 - 26 February 2007
+-----------------------------------------------------------
+
+PREAMBLE
+The goals of the Open Font License (OFL) are to stimulate worldwide
+development of collaborative font projects, to support the font creation
+efforts of academic and linguistic communities, and to provide a free and
+open framework in which fonts may be shared and improved in partnership
+with others.
+
+The OFL allows the licensed fonts to be used, studied, modified and
+redistributed freely as long as they are not sold by themselves. The
+fonts, including any derivative works, can be bundled, embedded,
+redistributed and/or sold with any software provided that any reserved
+names are not used by derivative works. The fonts and derivatives,
+however, cannot be released under any other type of license. The
+requirement for fonts to remain under this license does not apply
+to any document created using the fonts or their derivatives.
+
+DEFINITIONS
+&quot;Font Software&quot; refers to the set of files released by the Copyright
+Holder(s) under this license and clearly marked as such. This may
+include source files, build scripts and documentation.
+
+&quot;Reserved Font Name&quot; refers to any names specified as such after the
+copyright statement(s).
+
+&quot;Original Version&quot; refers to the collection of Font Software components as
+distributed by the Copyright Holder(s).
+
+&quot;Modified Version&quot; refers to any derivative made by adding to, deleting,
+or substituting -- in part or in whole -- any of the components of the
+Original Version, by changing formats or by porting the Font Software to a
+new environment.
+
+&quot;Author&quot; refers to any designer, engineer, programmer, technical
+writer or other person who contributed to the Font Software.
+
+PERMISSION &amp; CONDITIONS
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of the Font Software, to use, study, copy, merge, embed, modify,
+redistribute, and sell modified and unmodified copies of the Font
+Software, subject to the following conditions:
+
+1) Neither the Font Software nor any of its individual components,
+in Original or Modified Versions, may be sold by itself.
+
+2) Original or Modified Versions of the Font Software may be bundled,
+redistributed and/or sold with any software, provided that each copy
+contains the above copyright notice and this license. These can be
+included either as stand-alone text files, human-readable headers or
+in the appropriate machine-readable metadata fields within text or
+binary files as long as those fields can be easily viewed by the user.
+
+3) No Modified Version of the Font Software may use the Reserved Font
+Name(s) unless explicit written permission is granted by the corresponding
+Copyright Holder. This restriction only applies to the primary font name as
+presented to the users.
+
+4) The name(s) of the Copyright Holder(s) or the Author(s) of the Font
+Software shall not be used to promote, endorse or advertise any
+Modified Version, except to acknowledge the contribution(s) of the
+Copyright Holder(s) and the Author(s) or with their explicit written
+permission.
+
+5) The Font Software, modified or unmodified, in part or in whole,
+must be distributed entirely under this license, and must not be
+distributed under any other license. The requirement for fonts to
+remain under this license does not apply to any document created
+using the Font Software.
+
+TERMINATION
+This license becomes null and void if any of the above conditions are
+not met.
+
+DISCLAIMER
+THE FONT SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO ANY WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT
+OF COPYRIGHT, PATENT, TRADEMARK, OR OTHER RIGHT. IN NO EVENT SHALL THE
+COPYRIGHT HOLDER BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+INCLUDING ANY GENERAL, SPECIAL, INDIRECT, INCIDENTAL, OR CONSEQUENTIAL
+DAMAGES, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF THE USE OR INABILITY TO USE THE FONT SOFTWARE OR FROM
+OTHER DEALINGS IN THE FONT SOFTWARE.</pre>
+      </details>
+
+      <h2>5. Marca e imágenes</h2>
+      <p>El nombre y el logotipo de Takumi-Organization (<code>logo.png</code>, <code>favicon.png</code>, <code>og.png</code>) son del titular y no se licencian con la MIT; el uso de la marca de pie se regula en la <a href="../entidad/">política de la entidad</a>.</p>
+
+      <nav class="otras" aria-label="Otros documentos">
+        <h2>Otros documentos</h2>
+        <ul>
+          <li><a href="../privacidad/">Política de privacidad</a></li>
+          <li><a href="../terminos/">Términos y condiciones de uso</a></li>
+          <li><a href="../aviso-legal/">Aviso legal</a></li>
+          <li><a href="../cookies/">Política de cookies</a></li>
+          <li><a href="../entidad/">Política de la entidad</a></li>
+        </ul>
+      </nav>
+    </div>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap">
+      <span class="brand"><span class="mark" aria-hidden="true"></span>TAKUMI ORGANIZATION</span>
+      <span class="muted small"><a href="https://github.com/Takumi-Organization/takumi-organization.github.io" rel="noopener">código fuente</a></span>
+    </div>
+    <div class="wrap foot-legal">
+      <a class="tk-marca" href="../">Web desarrollada por Takumi-Organization</a>
+      <nav aria-label="Información legal">
+        <a href="../privacidad/">Privacidad</a> <a href="../terminos/">Términos</a> <a href="../aviso-legal/">Aviso legal</a> <a href="../cookies/">Cookies</a> <a href="../licencias/">Licencias</a> <a href="../entidad/">Política de entidad</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>

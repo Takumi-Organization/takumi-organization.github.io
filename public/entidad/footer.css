@@ -1,0 +1,81 @@
+/* Takumi-Organization · pie de marca (v1)
+   Norma y uso: https://takumi-organization.github.io/entidad/
+   Autocontenido: sin dependencias, sin fuentes externas. Personaliza solo con las variables --tk-*. */
+.tk-footer {
+  --tk-fondo: #000;
+  --tk-texto: #f2f2f2;
+  --tk-suave: #a6a6a6;
+  --tk-linea: #2a2a2a;
+  --tk-enfoque: #fff;
+  --tk-fuente: "Outfit", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --tk-tamano: 14px;
+  --tk-relleno: 24px;
+  --tk-ancho: 1180px;
+  box-sizing: border-box;
+  width: 100%;
+  padding: var(--tk-relleno);
+  background: var(--tk-fondo);
+  color: var(--tk-texto);
+  border-top: 1px solid var(--tk-linea);
+  font: 400 var(--tk-tamano) / 1.6 var(--tk-fuente);
+}
+.tk-footer *, .tk-footer *::before, .tk-footer *::after { box-sizing: border-box; }
+
+/* tema claro: forzado con data-tema="claro", o según el sistema con data-tema="auto" */
+.tk-footer[data-tema="claro"] {
+  --tk-fondo: #fff;
+  --tk-texto: #111;
+  --tk-suave: #555;
+  --tk-linea: #d4d4d4;
+  --tk-enfoque: #000;
+}
+@media (prefers-color-scheme: light) {
+  .tk-footer[data-tema="auto"] {
+    --tk-fondo: #fff;
+    --tk-texto: #111;
+    --tk-suave: #555;
+    --tk-linea: #d4d4d4;
+    --tk-enfoque: #000;
+  }
+}
+
+.tk-footer__in {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px 24px;
+  max-width: var(--tk-ancho);
+  margin: 0 auto;
+}
+.tk-footer__marca {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 0;
+  color: var(--tk-texto);
+  font-weight: 500;
+  text-decoration: none;
+}
+.tk-footer__marca::before {
+  content: "";
+  width: 14px;
+  height: 14px;
+  flex: none;
+  background: currentColor;
+  clip-path: polygon(0 0, 100% 0, 100% 26%, 40% 26%, 40% 100%, 0 100%);
+}
+.tk-footer__marca:hover { text-decoration: underline; text-underline-offset: 3px; }
+.tk-footer__enlaces { display: flex; flex-wrap: wrap; gap: 0 18px; }
+.tk-footer__enlaces a {
+  padding: 6px 0;
+  color: var(--tk-suave);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.tk-footer__enlaces a:hover { color: var(--tk-texto); }
+.tk-footer a:focus-visible { outline: 2px solid var(--tk-enfoque); outline-offset: 3px; }
+
+@media (max-width: 560px) {
+  .tk-footer__in { flex-direction: column; align-items: flex-start; }
+}

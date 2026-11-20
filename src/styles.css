@@ -180,3 +180,10 @@ input[type="range"] { padding: 0; height: 22px; accent-color: #fff; background: 
 
 .meter { width: 240px; height: 3px; background: var(--line-hi); margin-top: 8px; } .meter i { display: block; height: 100%; width: 0; background: var(--fg); }
 .btn[hidden] { display: none; }
+
+/* pie: marca de la entidad y enlaces legales (norma en /entidad/) */
+.foot-legal { margin-top: 18px; padding-top: 18px; border-top: 1px solid var(--line); font-size: 14px; }
+.foot-legal a { color: var(--mut); text-decoration: underline; text-decoration-color: var(--line-hi); text-underline-offset: 3px; padding: 6px 0; display: inline-block; }
+.foot-legal a:hover { color: var(--fg); text-decoration-color: var(--fg); }
+.foot-legal .tk-marca { color: var(--fg); font-weight: 500; }
+.foot-legal nav { display: flex; flex-wrap: wrap; gap: 0 18px; }

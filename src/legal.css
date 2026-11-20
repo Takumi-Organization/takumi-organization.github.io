@@ -1,0 +1,45 @@
+/* Páginas legales y política de entidad: se apoyan en los tokens de styles.css */
+.legal-page .nav { background: rgba(0, 0, 0, .86); border-color: var(--line); }
+.legal { padding: 150px 0 110px; }
+.legal-wrap { width: min(860px, 100% - 48px); }
+.legal h1 { font-weight: 200; font-size: clamp(34px, 6vw, 62px); line-height: 1.1; letter-spacing: .02em; margin-bottom: 14px; }
+.legal .actualizado { font: 400 12px var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--mut); margin-bottom: 44px; }
+.legal .lead-legal { font-size: 19px; color: #cfcfcf; max-width: 62ch; margin-bottom: 20px; }
+.legal h2 { font-weight: 300; font-size: 24px; line-height: 1.25; letter-spacing: .01em; max-width: none; margin: 52px 0 16px; padding-top: 26px; border-top: 1px solid var(--line); }
+.legal h3 { margin: 30px 0 12px; }
+.legal p, .legal li { color: #c9c9c9; }
+.legal p { margin-bottom: 16px; max-width: 74ch; }
+.legal ul { padding-left: 1.2em; margin-bottom: 16px; display: grid; gap: 8px; max-width: 74ch; }
+.legal strong { font-weight: 500; color: var(--fg); }
+.legal a { text-decoration-color: var(--line-hi); text-underline-offset: 3px; }
+.legal a:hover { text-decoration-color: var(--fg); }
+.legal .nota { font-size: 14px; color: var(--mut); margin-top: 40px; }
+.legal .regla { border-left: 2px solid var(--fg); padding: 4px 0 4px 18px; font-size: 18px; color: var(--fg); }
+.legal .marca-ejemplo { font: 500 18px var(--sans); color: var(--fg); }
+
+.legal .tabla { width: 100%; border-collapse: collapse; margin: 18px 0 24px; font-size: 14.5px; }
+.legal .tabla th, .legal .tabla td { text-align: left; vertical-align: top; padding: 14px 14px 14px 0; border-bottom: 1px solid var(--line); color: #c9c9c9; }
+.legal .tabla th { font: 400 11px var(--mono); letter-spacing: .16em; text-transform: uppercase; color: var(--mut); }
+.legal .tabla td:first-child { color: var(--fg); min-width: 130px; }
+.legal code { overflow-wrap: anywhere; }
+
+.legal pre { background: var(--panel); border: 1px solid var(--line-hi); padding: 18px 20px; overflow-x: auto; font: 400 12.5px/1.6 var(--mono); color: #d8d8d8; margin: 12px 0 24px; white-space: pre; tab-size: 2; }
+.legal pre.texto-licencia { white-space: pre-wrap; overflow-wrap: anywhere; }
+.legal details { margin: 8px 0 24px; }
+.legal summary { cursor: pointer; font: 400 12px var(--mono); letter-spacing: .14em; text-transform: uppercase; color: var(--fg); padding: 8px 0; }
+
+.legal .preview { border: 1px solid var(--line-hi); background: #101010; padding: 18px; margin: 12px 0 24px; }
+.legal .preview .espacio { height: 14px; }
+.legal .preview a { text-decoration: underline; }
+
+.legal .otras { margin-top: 70px; }
+.legal .otras h2 { font-size: 14px; font-weight: 500; letter-spacing: .22em; text-transform: uppercase; }
+.legal .otras ul { list-style: none; padding: 0; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); max-width: none; }
+
+@media (max-width: 560px) {
+  .legal { padding-top: 120px; }
+  .legal .tabla, .legal .tabla tbody, .legal .tabla tr, .legal .tabla td { display: block; }
+  .legal .tabla thead { display: none; }
+  .legal .tabla tr { padding: 12px 0; border-bottom: 1px solid var(--line); }
+  .legal .tabla td { border: 0; padding: 4px 0; }
+}
