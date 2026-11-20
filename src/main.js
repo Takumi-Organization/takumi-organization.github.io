@@ -1,32 +1,14 @@
 import "./styles.css";
 import { initBlob } from "./blob.js";
 import { loadData } from "./data.js";
-import { initPro } from "./robot-pro.js";
+import { initSpline } from "./robot-spline.js";
 import { CONTACT_EMAIL, ORG_URL, WHATSAPP, WHATSAPP_TEXTO } from "./config.js";
 
 const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 initBlob(document.getElementById("hero-canvas"), reduced);
-// robot 3D: modelo profesional (por defecto) y Takumi-bot propio (se carga solo si se pide)
-initPro({
-  host: document.getElementById("pro-host"), facade: document.getElementById("pro-load"), chipsEl: document.getElementById("cam-chips"),
-  estadoEl: document.getElementById("pro-estado"), reduced,
-});
-let propioIniciado = false;
-const paneProEl = document.getElementById("pane-pro"), paneOwnEl = document.getElementById("pane-own");
-const ctrlProEl = document.getElementById("ctrl-pro"), ctrlOwnEl = document.getElementById("ctrl-propio"), modoChips = document.getElementById("modo-chips");
-function modo(m) {
-  const pro = m === "pro";
-  paneProEl.hidden = !pro; ctrlProEl.hidden = !pro; paneOwnEl.hidden = pro; ctrlOwnEl.hidden = pro;
-  modoChips.querySelectorAll("button").forEach((b) => b.setAttribute("aria-pressed", b.dataset.modo === m));
-  if (!pro && !propioIniciado) {
-    propioIniciado = true;
-    import("./robot.js").then(({ initRobot }) => initRobot(document.getElementById("robot-canvas"), {
-      tipEl: document.getElementById("robot-tip"), readoutEl: document.getElementById("robot-part"), chipsEl: document.getElementById("robot-chips"), reduced,
-    }));
-  }
-}
-modoChips.addEventListener("click", (e) => { const b = e.target.closest("button[data-modo]"); if (b) modo(b.dataset.modo); });
+// robot 3D: escena de Spline, se carga sola al acercarse a la sección
+initSpline({ canvas: document.getElementById("robot-canvas"), facade: document.getElementById("spline-load"), estadoEl: document.getElementById("spline-estado"), reduced });
 loadData();
 
 // revelado al hacer scroll
