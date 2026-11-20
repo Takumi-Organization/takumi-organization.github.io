@@ -1,12 +1,36 @@
 import "./styles.css";
 import { initBlob } from "./blob.js";
+import { createAudio } from "./audio.js";
 import { loadData } from "./data.js";
 import { initSpline } from "./robot-spline.js";
 import { CONTACT_EMAIL, ORG_URL, WHATSAPP, WHATSAPP_TEXTO } from "./config.js";
 
 const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-initBlob(document.getElementById("hero-canvas"), reduced);
+const audio = createAudio();
+initBlob(document.getElementById("hero-canvas"), reduced, audio);
+// el objeto del hero reacciona al sonido (vía micrófono, solo si se acepta el permiso); sin sonido no cambia nada
+const audioBtn = document.getElementById("audio-btn"), sysBtn = document.getElementById("audio-sys-btn"), audioMsg = document.getElementById("audio-msg"), meter = document.getElementById("audio-meter");
+// compartir pestaña con audio solo existe en navegadores Chromium; en Firefox/Nivora basta el botón principal
+const puedeCompartir = !!navigator.mediaDevices?.getDisplayMedia && !/Firefox/.test(navigator.userAgent);
+sysBtn.hidden = !puedeCompartir;
+audio.onChange((on) => {
+  audioBtn.setAttribute("aria-pressed", on); audioBtn.textContent = on ? "Audio: activo (parar)" : "Reaccionar al audio";
+  sysBtn.hidden = on || !puedeCompartir;
+  meter.hidden = !on; audioMsg.textContent = on ? `Fuente: ${audio.state.origen}. Se analiza en local; no se graba nada.` : "";
+  if (on) (function pinta() { if (!audio.state.activo) return; meter.firstElementChild.style.width = Math.min(100, audio.state.nivel * 160) + "%"; requestAnimationFrame(pinta); })();
+});
+async function activar(fuente) {
+  if (audio.state.activo) return audio.stop();
+  try { await audio.start(fuente); } catch (e) {
+    audioMsg.textContent = e.message === "sin-audio" ? "No se compartió audio: marca «Compartir audio» al elegir pestaña o pantalla."
+      : e.name === "NotAllowedError" ? "Permiso denegado." : "No se pudo acceder al audio de este dispositivo.";
+  }
+}
+audioBtn.addEventListener("click", () => activar("auto"));
+sysBtn.addEventListener("click", () => activar("sistema"));
+// si el navegador ya recuerda el permiso, se reactiva solo (sin aviso nuevo)
+navigator.permissions?.query({ name: "microphone" }).then((r) => { if (r.state === "granted") audio.start().catch(() => {}); }).catch(() => {});
 // robot 3D: escena de Spline, se carga sola al acercarse a la sección
 initSpline({ canvas: document.getElementById("robot-canvas"), facade: document.getElementById("spline-load"), estadoEl: document.getElementById("spline-estado"), reduced });
 loadData();

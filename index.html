@@ -36,7 +36,11 @@
       <div class="hero-actions reveal">
         <a class="btn" href="#proyectos">Ver proyectos</a>
         <a class="btn ghost" href="#datos">Datos en vivo</a>
+        <button type="button" class="btn ghost" id="audio-btn" aria-pressed="false" aria-describedby="audio-msg">Reaccionar al audio</button>
+        <button type="button" class="btn ghost" id="audio-sys-btn" aria-pressed="false" aria-describedby="audio-msg">Compartir pestaña con audio</button>
       </div>
+      <p class="muted small" id="audio-msg" role="status"></p>
+      <div class="meter" id="audio-meter" hidden aria-hidden="true"><i></i></div>
       <dl class="hero-stats reveal" id="hero-stats" aria-live="polite">
         <div><dt>Repositorios</dt><dd data-stat="repos">—</dd></div>
         <div><dt>Commits</dt><dd data-stat="commits">—</dd></div>

@@ -30,6 +30,7 @@ float snoise(vec3 v){
 const VERT = /* glsl */ `
 uniform float uTime, uAmp, uPulse, uScroll, uPointerOn;
 uniform vec2 uPointer;
+uniform vec3 uAudio; // graves, medios, agudos (0 en silencio)
 varying vec3 vWorld; varying float vDisp;
 ${NOISE}
 void main(){
@@ -42,6 +43,9 @@ void main(){
   d += exp(-dist*dist*8.) * uPointerOn * .34;
   d += uPulse * .28 * snoise(p*3.6 + uTime*2.2);
   d += uScroll * .6 * n2;
+  d += uAudio.x * .27 * (.55 + .45 * n);
+  d += uAudio.y * .17 * snoise(p*2.2 + vec3(uTime*1.3));
+  d += uAudio.z * .1 * snoise(p*6. + vec3(uTime*3.4));
   vec3 pos = p + normalize(p) * d;
   vDisp = d;
   vec4 w = modelMatrix * vec4(pos,1.);
@@ -67,7 +71,7 @@ void main(){
   gl_FragColor = vec4(vec3(c), 1.);
 }`;
 
-export function initBlob(canvas, reduced) {
+export function initBlob(canvas, reduced, audio) {
   let renderer;
   try {
     renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true, powerPreference: "high-performance" });
@@ -87,7 +91,7 @@ export function initBlob(canvas, reduced) {
     vertexShader: VERT, fragmentShader: FRAG,
     uniforms: {
       uTime: { value: 0 }, uAmp: { value: reduced ? 0.1 : 0.34 }, uPulse: { value: 0 }, uScroll: { value: 0 },
-      uPointer: { value: new THREE.Vector2(9, 9) }, uPointerOn: { value: 0 },
+      uPointer: { value: new THREE.Vector2(9, 9) }, uPointerOn: { value: 0 }, uAudio: { value: new THREE.Vector3() },
     },
   });
   const mesh = new THREE.Mesh(new THREE.IcosahedronGeometry(1.3, small ? 10 : 18), mat);
@@ -158,8 +162,10 @@ export function initBlob(canvas, reduced) {
     u.uPointerOn.value = reduced ? 0 : st.on;
     u.uPulse.value = st.pulse;
     u.uScroll.value = reduced ? 0 : st.scroll;
+    const au = audio ? audio.update() : null, ak = reduced ? 0.4 : 1; // con movimiento reducido, reacción más suave
+    u.uAudio.value.set(au ? au.bass * ak : 0, au ? au.mid * ak : 0, au ? au.high * ak : 0);
 
-    if (!st.drag) { st.velY *= 0.95; st.velX *= 0.95; st.rotY += st.velY + dt * 0.12 * (reduced ? 0.3 : 1); st.rotX += st.velX; }
+    if (!st.drag) { st.velY *= 0.95; st.velX *= 0.95; st.rotY += st.velY + dt * (0.12 * (reduced ? 0.3 : 1) + (au ? au.mid * 0.5 * ak : 0)); st.rotX += st.velX; }
     st.rotX = Math.max(-1.1, Math.min(1.1, st.rotX));
     mesh.rotation.set(st.rotX, st.rotY, 0);
 
